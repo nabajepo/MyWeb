@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My web site</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <!--First part : header -->
+    <!--#########################################-->
+    <header class="header">
+        <a href="#home" class="logo">NAHIMANA
+            <span> Dondi</span>
+        </a>
+        <i class="bx bx-menu" id="menu-icon"></i>
+        <nav class="navbar">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+    <!--#########################################-->
+    <!--Second part : home -->
+    <section class="home" id="home">
+        <!-- for text stuff-->
+        <div class="home-content">
+            <h1>Hi,It's <span>Dondi</span></h1>
+            <h3>I'm a <span class="job">Computer scientist </span></h3>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugit veritatis voluptas beatae unde a corrupti itaque consequuntur. Quis illum repellendus sequi, sit aliquid quod voluptas nulla libero velit, veniam reiciendis.</p>
+             <!-- for icons and log-->
+        <div class="social-icons">
+            <a href="#">
+                <i class="bx bxl-github"></i>
+            </a>
+            <a href="#">
+                <i class="bx bxl-linkedin-square"></i>
+            </a>
+            <a href="#">
+                <i class="bx bxl-instagram-alt"></i>
+            </a>
+            <a href="#">
+                <i class="bx bxl-twitter"></i>
+            </a>
+        </div>
+        <!-- quand je clique sur hire on va à la section dans l'id est about # represente l'id-->
+        <div class="btn-group">
+            <a href="#about" class="btn">Hire</a>
+            <a href="#contact" class="btn">Contact</a>
+        </div>
+        </div>
+       
+        <!--Pour l'image de la personne -->
+        <div class="home-img">
+            <img src="image.png" alt="My image">
+        </div>
+    </section>
+    <!--#########################################-->
+    <!--third part : About -->
+    <section class="about" id="about">
+        <div class="about-img">
+            <img src="image.png" alt="myImage">
+        </div>
+        <div class="about-content">
+            <h2>About <span>Me</span></h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum reprehenderit officiis ipsum qui id dolorem tenetur quis, aliquid, magni ducimus cumque nostrum omnis blanditiis itaque perferendis eveniet sunt doloremque rerum.</p>
+            <a href="#" class="btn">Read More</a>
+        </div>
+    </section>
+    <!--#########################################-->
+    <!--third part : services-->
+    <section class="services" id="services">
+        <h2 class="heading">services</h2>
+        <div class="services-container">
+            <div class="service-box">
+                <!---First-devices -->
+                <div class="service-info">
+                    <i class="bx bxs-devices"></i>
+                    <h4>Mobile App developpement</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, distinctio doloribus nam enim accusamus ipsa quidem suscipit nulla blanditiis illum soluta atque ad expedita, quisquam ab, dolor impedit necessitatibus corrupti?</p>
+                </div>
+            </div>
+            <!---Second-devices -->
+            <div class="service-box">
+                <div class="service-info">
+                    <i class="bx bx-code"></i>
+                    <h4>Front-end developpement</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, distinctio doloribus nam enim accusamus ipsa quidem suscipit nulla blanditiis illum soluta atque ad expedita, quisquam ab, dolor impedit necessitatibus corrupti?</p>
+                </div>
+            </div>    
+            <!---Third-devices -->
+            <div class="service-box">
+                
+                <div class="service-info">
+                    <i class="bx bx-code-curly"></i>
+                    <h4>Back-end developpement</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, distinctio doloribus nam enim accusamus ipsa quidem suscipit nulla blanditiis illum soluta atque ad expedita, quisquam ab, dolor impedit necessitatibus corrupti?</p>
+                </div>
+            </div>
+        </div>
+    </section>
+     <!--#########################################-->
+    <!--fourth part : Contact-->
+    <section class="contact" id="contact">
+        <h2 class="heading">Contact <span>Me</span></h2>
+        <form action="">
+            <div class="input-group">
+                 <div class="input-box">
+                    <input type="text" placeholder="Full name">
+                    <input type="email" placeholder="Email">
+                 </div>
+                 <div class="input-box">
+                    <input type="number" placeholder="Phone number">
+                    <input type="text" placeholder="Subject">
+                </div>
+            </div>
+            <div class="input-group-2">
+                <textarea name="" id="" cols="30" rows="10" placeholder="Your message"></textarea>
+                <input type="submit" value="Send Message" class="btn">
+            </div>
+        </form>
+    </section>
+    <footer class="footer">
+        <div class="social-icons">
+            <a href="#">
+                <i class="bx bxl-github"></i>
+            </a>
+            <a href="#">
+                <i class="bx bxl-linkedin-square"></i>
+            </a>
+            <a href="#">
+                <i class="bx bxl-instagram-alt"></i>
+            </a>
+            <a href="#">
+                <i class="bx bxl-twitter"></i>
+            </a>
+        </div>
+        <ul class="list">
+            <li>
+                <a href="#">FAQ</a>
+            </li>
+            <li>
+                <a href="#services">Services</a>
+            </li>
+            <li>
+                <a href="#about">About Me</a>
+            </li>
+            <li>
+                <a href="#contact">Contact</a>
+            </li>
+        </ul>
+        <p class="copyright">
+            &copy;NAHIMANA Dondi | All Rights Reserved
+        </p>
+    </footer>
+    
+</body>
+</html>
