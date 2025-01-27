@@ -319,5 +319,29 @@ section{
     margin-top: 40px;
     font-size: 16px;
 }
+/*----------------------------Media-----------------------*/
+/* Style par défaut pour les grands écrans */
+body {
+    font-size: 16px;
+}
 
+@media screen and (max-width: 768px) {
+    /* Style pour les écrans plus petits (tablettes, téléphones) */
+    body {
+        font-size: 14px;
+    }
 
+    .header {
+        display: block;
+        text-align: center;
+    }
+
+    .navbar {
+        display: block;
+        text-align: center;
+    }
+
+    .home-content {
+        text-align: center;
+    }
+}
