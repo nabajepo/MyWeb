@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Inclure les icônes Boxicons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    
+    <style>
+        .container {
+            position: relative;
+            display: inline-block;
+            margin: 50px;
+        }
+
+        #menu-icon {
+            font-size: 32px;
+            cursor: pointer;
+            padding: 10px;
+        }
+
+        .hidden-box {
+            position: absolute;
+            top: 100%; /* Position sous l'icône */
+            left: 0;
+            background: white;
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            min-width: 200px;
+        }
+
+        .container:hover .hidden-box {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(5px);
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <i class="bx bx-menu" id="menu-icon"></i>
+    <div class="hidden-box">
+        <h3>Menu caché</h3>
+        <p>Contenu de la boîte qui apparaît au survol</p>
+        <ul>
+            <li>Option 1</li>
+            <li>Option 2</li>
+            <li>Option 3</li>
+        </ul>
+    </div>
+</div>
+
+</body>
+</html>

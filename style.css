@@ -40,6 +40,7 @@ body{
     font-size:3.6rem;
     color:var(--main-color);
     display:none;
+    cursor: pointer;
 }
 .logo{
     font-size:3rem;
@@ -397,4 +398,36 @@ section{
         flex-direction: column;
         gap: 1.5rem;
     }
+}
+/*pour le cache container */
+.header .container{
+     position:relative;
+     display:inline-block;
+     margin:50px;
+}
+.header .hidden-box {
+    position: absolute;
+    top: 100%; /* Position sous l'icône */
+    left: 0;
+    background: black;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    min-width: 200px;
+}
+.header .container:hover .hidden-box {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(5px);
+}
+.header .container .hidden-box li{
+    border:1px solid orangered ;
+    border-radius: 8px;
+    font-size: 10px;
+    color:white
+
 }
