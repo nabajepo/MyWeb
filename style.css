@@ -403,7 +403,6 @@ section{
 .header .container{
      position:relative;
      display:inline-block;
-     margin:50px;
 }
 .header .hidden-box {
     position: absolute;
