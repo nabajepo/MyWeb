@@ -1,16 +1,20 @@
-*{/* etoile veut dire les elements quelle contient s'applique sur toutes les elements de la page */
-    margin: 0;
-    padding:0;
-    box-sizing: border-box;
-    text-decoration: none;/*Supprime les décorations comme le soulignement des liens */
-    border:none;/* Supprime les bordures par défaut des éléments comme les boutons ou les champs de formulaire.*/
-    outline:none;
-    scroll-behavior: smooth;
-    font-family: "Poppins";
+*{/*Cela signifie que toutes les balises (ou éléments) sur la page sont ciblées*/
+    margin: 0;              /* Réinitialise les marges des éléments */
+    padding: 0;             /* Réinitialise le padding (espacement interne) des éléments */
+    box-sizing: border-box;/*Cette règle modifie la manière dont la taille totale d'un élément est calculée. Par défaut, la largeur (width) et la hauteur (height) d'un élément ne tiennent pas compte des bordures et des marges. Avec box-sizing: border-box;, ces valeurs incluent les bordures et le padding, ce qui permet un contrôle plus précis sur la taille des éléments.*/
+    text-decoration: none;/*Supprime les décorations comme le soulignement des liens.*/
+    border:none;/*Supprime les bordures par défaut des éléments (comme les boutons ou les champs de formulaire).*/
+    outline:none;/*Supprime le contour (outline) par défaut qui apparaît sur certains éléments comme les champs de texte quand on les sélectionne.*/
+    scroll-behavior: smooth;/*Rend les défilements de la page plus fluides lorsque l'on clique sur un lien ou utilise un bouton pour naviguer.*/
+    font-family: "Poppins";/*Définit la police de caractères de toute la page à "Poppins" pour un look moderne et propre.*/
 }
 html{
-    font-size: 60%;
-    overflow-x: hidden;
+    font-size: 60%;/*Définit la taille de la police de base à 60% de la taille par défaut du navigateur.
+
+    En général, la taille par défaut est 16px.
+    60% de 16px = 9.6px, ce qui rend plus facile l'utilisation de rem pour les tailles.
+    (Par exemple, 1rem = 9.6px, 2rem = 19.2px.)*/
+    overflow-x: hidden;/*Cache tout contenu qui dépasse horizontalement la largeur de l'écran.*/
 }
 :root{
     --bg-color:black;
@@ -24,133 +28,151 @@ body{
 }
 /*---------------------------PART:HEADER---------------------------*/
 .header{
-    position: fixed;
-    width: 100%;
+    position: fixed;/*Fixe le <header> en haut de la page.
+    Il reste visible même si l'utilisateur défile vers le bas.*/
+    width: 100%;/*Le <header> occupe toute la largeur de la page.*/
     top:0;
     left:0;
-    padding:4rem 12%;
+    /*Place le <header> tout en haut de la page (0 pixel de marge par rapport au haut et à gauche).*/
+    padding:4rem 12%;/*Ajoute de l'espace intérieur au <header> :
+
+    4rem en haut et en bas.
+    12% sur les côtés (gauche et droite), proportionnel à la largeur de la page.*/
     background: rgba(0,0,0,0,3);
-    backdrop-filter: blur(10px);
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    z-index: 100;
+    backdrop-filter: blur(10px);/*Ajoute un flou d’arrière-plan pour tout ce qui se trouve sous le <header>.
+    Cela donne un effet "verre dépoli".*/
+    display:flex;/*Transforme le <header> en conteneur flexbox, ce qui facilite l'alignement des éléments à l'intérieur.*/
+    justify-content:space-between;/*Les éléments à l'intérieur du <header> sont répartis avec un espace égal entre eux.*/
+    align-items:center;/*Aligne verticalement les éléments du <header> au centre.*/
+    z-index: 100;/*Place le <header> au-dessus des autres éléments sur la page (car une valeur plus élevée de z-index signifie que l'élément est "au-dessus").*/
 }
 #menu-icon{
-    font-size:3.6rem;
+    font-size:3.6rem;/*Définit la taille du texte ou de l'icône du #menu-icon à 3.6 rem.
+    1 rem correspond à la taille de base de la police définie dans l'élément <html> (dans ce cas, probablement 10px, donc 3.6 rem = 36px).*/
     color:var(--main-color);
-    display:none;
+    display:none;/*Cache complètement le #menu-icon (il ne s'affiche pas sur la page).
+    Cela peut être utilisé pour rendre le menu visible uniquement sur certains écrans (par exemple, en combinaison avec une règle de responsive design comme @media).*/
     cursor: pointer;
 }
 .logo{
-    font-size:3rem;
+    font-size:3rem;/*Définit la taille de la police de l'élément .logo à 3 rem.
+    Comme 1 rem est souvent équivalent à 10px (selon la configuration de la page), cela donne une taille de police de 30px pour le logo.*/
     color:var(--text-color);
-    font-weight:800;
+    font-weight:800;/*Définit la graisse de la police à 800, ce qui rend le texte beaucoup plus gras.
+    Cela aide à donner un effet de logo plus audacieux et visible.*/
     cursor:pointer;
-    transition:0.3s ease;
+    transition:0.3s ease;/*Changement d'etat quand le css change dependament du media */
 }
 .logo:hover{
-    transform:scale(1.1)
+    transform:scale(1.1);/*La propriété transform permet d'appliquer des transformations visuelles à l'élément, comme le déplacement, la rotation, l'échelle, etc.
+    Le scale(1.1) spécifie que l'élément .logo doit être agrandi à 110% de sa taille originale lorsque l'utilisateur survole l'élément.
+    scale(1.1) signifie que l'élément devient 1.1 fois plus grand (soit 10% plus grand).*/
 }
 span{
-    color:var(--main-color)
+    color:var(--main-color);
 }
 .navbar a{
-    font-size:1.8rem;
-    color:var(--text-color);
-    margin-left:4rem;
-    font-weight:500;
-    border-bottom:3px solid transparent;
-    transition: 0.3s ease;
+    font-size: 1.8rem; /* Définit la taille de la police des liens dans la navbar à 1.8rem */
+    color: var(--text-color); /* Définit la couleur du texte avec la variable --text-color (définie ailleurs dans le CSS) */
+    margin-left: 4rem; /* Ajoute un espace de 4rem à gauche de chaque lien dans la navbar */
+    font-weight: 500; /* Définit le poids de la police à 500 (modéré, ni trop léger ni trop lourd) */
+    border-bottom: 3px solid transparent; /* Ajoute une bordure inférieure de 3px, mais invisible (transparent) */
+    transition: 0.3s ease; /* Applique une transition de 0.3 seconde pour les changements de propriétés CSS */
 }
 .navbar a:hover{
-    border-bottom: 3px solid var(--main-color);
-    color:var(--main-color);
+    border-bottom: 3px solid var(--main-color); /* Ajoute une bordure en bas du lien au survol */
+    color: var(--main-color); /* Change la couleur du texte au survol */
 }
 /*---------------------------PART:HOME---------------------------*/
 section{
-    min-height:100vh;
-    padding:13rem 12%;
+    min-height: 100vh;  /* La section occupe au moins toute la hauteur de la fenêtre */
+    padding: 13rem 12%;  /* Espace intérieur de 13rem en haut et en bas, 12% à gauche et à droite */
 }
 .home{
-    display:flex;
-    align-items: center;
-    justify-content: center;
-    gap:15rem;
+    display: flex; /* Utilise le modèle de boîte flexible pour aligner les éléments */
+    align-items: center; /* Aligne les éléments sur l'axe vertical (axe des Y) au centre */
+    justify-content: center; /* Aligne les éléments sur l'axe horizontal (axe des X) au centre */
+    gap: 15rem; /* Crée un espace de 15rem entre les éléments enfants */
 }
 .home-content{
-    display:flex;
-    flex-direction:column;
-    align-items:flex-end;
-    text-align:right;
+    display: flex; /* Utilise le modèle de boîte flexible pour aligner les éléments */
+    flex-direction: column; /* Aligne les éléments enfants en colonne (verticalement) */
+    align-items: flex-end; /* Aligne les éléments enfants à droite du conteneur */
+    text-align: right; /* Aligne le texte à droite à l'intérieur de l'élément */
 }
 .home-content h1{
-    font-size:7rem;
-    font-weight:700;
-    margin-top:1.5rem;
-    line-height:1;
+    font-size: 7rem;           /* Définit la taille du texte à 7 rem */
+    font-weight: 700;          /* Définit l'épaisseur de la police à 700 (gras) */
+    margin-top: 1.5rem;        /* Ajoute un espace de 1.5 rem au-dessus du titre */
+    line-height: 1;            /* Définit l'interligne (espacement entre les lignes de texte) à 1 (sans espace supplémentaire) */
 }
 .home-content h3{
-    font-size:4rem;
-    margin:1rem 0;
+    font-size: 4rem;     /* Définit la taille du texte à 4 rem */
+    margin: 1rem 0;      /* Ajoute un espace de 1 rem en haut et en bas de l'élément */
 }
 .home-content p{
-    font-size:1.5rem;
-    font-weight:500;
-    line-height:1.8;
+    font-size: 1.5rem;      /* Définit la taille de la police à 1.5rem */
+    font-weight: 500;       /* Définit le poids de la police à 500 (modéré) */
+    line-height: 1.8;       /* Définit l'interligne (espacement entre les lignes) à 1.8 */
 }
 .home-img img{
-    width:32vw;
-    border-radius:100%;
-    box-shadow:0 0 25px var(--main-color);
-    transition:0.4s ease-in-out;
-    
+    width: 32vw;             /* Définit la largeur de l'image à 32% de la largeur de la fenêtre */
+    border-radius: 100%;     /* Applique une bordure arrondie à 100% pour créer un cercle parfait */
+    box-shadow: 0 0 25px var(--main-color); /* Ajoute une ombre autour de l'image avec un rayon de 25px et la couleur définie par la variable --main-color */
+    transition: 0.4s ease-in-out; /* Applique une transition douce pendant 0.4 seconde pour toute propriété CSS animable */
+    /*
+    ease : L'animation commence lentement, accélère au centre et ralentit avant la fin.
+ease-in-out : L'animation commence lentement, accélère au centre, puis ralentit à la fin, mais cette transition est plus prononcée et homogène sur toute la durée.
+*/
 }
 .home-img img:hover{
-    box-shadow:0 0 25px var(--main-color),
-               0 0 50px var(--main-color),
-               0 0 100px var(--main-color);
+    box-shadow: 0 0 25px var(--main-color), /* Ombre légère de 25px avec la couleur définie par --main-color */
+               0 0 50px var(--main-color), /* Ombre plus grande de 50px avec la même couleur */
+               0 0 100px var(--main-color); /* Ombre encore plus grande de 100px avec la même couleur */
 }
 .social-icons a{
-    display:inline-flex;
-    justify-content:center;
-    align-items:center;
-    font-size:3rem;
-    padding:1rem;
-    margin:3rem 0.5rem;
-    transition:0.3s ease;
-    background: transparent;
-    border:2px solid var(--main-color);
-    color:var(--main-color);
-    gap:2rem;
-    border-radius: 50%;
+    display: inline-flex; /* Affiche les liens comme des éléments flexibles en ligne, ce qui permet de mieux aligner leur contenu */
+    justify-content: center; /* Centre horizontalement le contenu à l'intérieur du lien */
+    align-items: center; /* Centre verticalement le contenu à l'intérieur du lien */
+    font-size: 3rem; /* Définit une taille de police de 3rem pour le contenu (icônes ou texte) */
+    padding: 1rem; /* Ajoute un espace intérieur de 1rem autour du contenu */
+    margin: 3rem 0.5rem; /* Ajoute une marge externe : 3rem en haut et en bas, 0.5rem à gauche et à droite */
+    transition: 0.3s ease; /* Applique une transition fluide sur les propriétés modifiables pendant 0.3 seconde */
+    background: transparent; /* Définit un fond transparent */
+    border: 2px solid var(--main-color); /* Ajoute une bordure de 2px avec la couleur définie par --main-color */
+    color: var(--main-color); /* Définit la couleur du texte ou de l'icône à --main-color */
+    gap: 2rem; /* Ajoute un espace de 2rem entre les éléments internes si plusieurs éléments sont présents */
+    border-radius: 50%; /* Arrondit les coins du lien pour le transformer en cercle */
 }
 
 .social-icons a:hover{
-    color:var(--text-color);
-    transform:scale(1.2)translateY(-5px);
-    box-shadow: 0 0 25px var(--main-color);
+    color: var(--text-color); /* Change la couleur du texte ou des icônes à la couleur définie par --text-color lors du survol */
+    transform: scale(1.2) translateY(-5px); /* Applique deux transformations combinées :
+                                             1. Augmente la taille de l'élément de 20% (scale(1.2)).
+                                             2. Déplace l'élément vers le haut de 5px (translateY(-5px)). */
+    box-shadow: 0 0 25px var(--main-color); /* Ajoute une ombre autour de l'élément avec une couleur définie par --main-color 
+                                              et une diffusion de 25px, pour un effet lumineux. */
 }
 .btn-group{
-    display:flex;
-    gap:3rem;
+    display: flex;      /* Active le mode de disposition flexbox, permettant d'organiser les éléments enfants en ligne ou en colonne */
+    gap: 3rem;          /* Ajoute un espacement de 3rem entre les éléments enfants pour les séparer uniformément */
 }
 .btn{
-    display:inline-block;
-    padding:1rem 3rem;
-    background:var(--main-color);
-    box-shadow:0 0 25px var(--main-color);
-    border-radius: 3rem;
-    font-size:3rem;
-    color:var(--second-bg-color);
-    border:2px solid transparent;
-    font-weight:600;
-    transition:0.3s ease-in-out;
+    display: inline-block;               /* Rend l'élément semblable à un bloc tout en permettant qu'il soit placé en ligne avec d'autres éléments */
+    padding: 1rem 3rem;                 /* Ajoute un espace intérieur de 1rem en haut/bas et 3rem à gauche/droite */
+    background: var(--main-color);      /* Définit la couleur de fond à la valeur de la variable CSS --main-color */
+    box-shadow: 0 0 25px var(--main-color); /* Ajoute une ombre autour du bouton avec une couleur basée sur la variable --main-color */
+    border-radius: 3rem;               /* Arrondit les coins du bouton pour lui donner une forme plus douce */
+    font-size: 3rem;                   /* Définit la taille de la police à 3rem pour un texte bien visible */
+    color: var(--second-bg-color);     /* Définit la couleur du texte à la valeur de la variable CSS --second-bg-color */
+    border: 2px solid transparent;     /* Ajoute une bordure de 2px de couleur transparente (utile pour les transitions sur le hover) */
+    font-weight: 600;                  /* Rend le texte du bouton semi-gras pour une meilleure lisibilité */
+    transition: 0.3s ease-in-out;      /* Ajoute une transition douce pour tout changement CSS sur le bouton en 0.3 seconde */
 }
 .btn:hover{
-    transform: scale(1.05);
-    box-shadow:0 0 25px var(--main-volor),
-               0 0 50px var(--main-color);
+    transform: scale(1.05);             /* Agrandit légèrement le bouton de 5% lors du survol */
+    box-shadow: 0 0 25px var(--main-color), /* Ajoute une première ombre légère autour du bouton avec la couleur de --main-color */
+                0 0 50px var(--main-color); /* Ajoute une deuxième ombre plus large, également avec --main-color, pour un effet lumineux */
 }
 .btn-group a:nth-of-type(2){
     background-color:black ;
@@ -165,17 +187,17 @@ section{
 }
 /*---------------------------PART:About---------------------------*/
 .about{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    gap:3rem;
-    background-color: var(--second-bg-color);
+    display: flex;                        /* Active un modèle de mise en page flexible pour l'élément .about */
+    justify-content: center;              /* Aligne horizontalement les éléments au centre */
+    align-items: center;                  /* Aligne verticalement les éléments au centre */
+    gap: 3rem;                            /* Ajoute un espacement de 3rem entre chaque élément enfant */
+    background-color: var(--second-bg-color); /* Définit la couleur de fond avec la valeur de la variable --second-bg-color */
 }
 .about-img img{
-    width: 32vw;
-    border-radius:60%;
-    box-shadow:0 0 25px var(--main-color);
-    transition:0.4s ease-in-out;
+    width: 32vw;                /* Définit la largeur de l'image à 32% de la largeur de la fenêtre d'affichage */
+    border-radius: 60%;         /* Arrondit les coins de l'image à 60%, donnant un effet d'ellipse ou de cercle */
+    box-shadow: 0 0 25px var(--main-color); /* Ajoute une ombre douce autour de l'image avec la couleur définie par la variable --main-color */
+    transition: 0.4s ease-in-out; /* Applique une transition fluide de 0.4 seconde pour toute modification des propriétés animables */
 }
 .about-img img:hover{
     box-shadow:0 0 25px var(--main-color),
@@ -183,14 +205,14 @@ section{
                0 0 100px var(--main-color);
 }
 .about-content h2{
-    font-size:7rem;
-    text-align:left;
+    font-size: 7rem;       /* Définit la taille de la police à 7rem (très grande taille, adaptée aux titres principaux) */
+    text-align: left;      /* Aligne le texte du titre à gauche */
 }
 .about-content p{
-    font-size:1.8rem;
+    font-size: 1.8rem;  /* Définit la taille de la police des paragraphes à 1.8rem (une taille légèrement plus grande que par défaut pour une meilleure lisibilité). */
 }
 .about-content .btn{
-    margin:3rem 0;
+    margin: 3rem 0;  /* Ajoute une marge(distance) verticale de 3rem (au-dessus et en dessous) pour espacer le bouton des autres éléments. */
 }
 ::-webkit-scrollbar{
     width: 20px;
@@ -207,9 +229,9 @@ section{
     color:black;
 }
 .heading{
-    text-align:center;
-    font-size:7rem;
-    margin:5rem 0;
+    text-align: center;  /* Aligne le texte horizontalement au centre de son conteneur. */
+    font-size: 7rem;     /* Définit la taille de la police à 7rem, ce qui rend le texte très grand. */
+    margin: 5rem 0;      /* Applique une marge de 5rem au-dessus et en dessous du texte, mais aucune sur les côtés. */
 }
 .services{
     background-color: var(--bg-color);
@@ -219,21 +241,21 @@ section{
     color:var(--text-color);
 }
 .services-container{
-    display:grid;
-    grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
-    align-items:center;
-    gap:2.5rem;
+    display: grid; /* Définit l'élément comme une grille, permettant de placer les enfants dans une disposition en lignes et colonnes. */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Crée des colonnes qui s'ajustent automatiquement pour remplir l'espace disponible, avec une largeur minimale de 300px et une largeur maximale de 1 fraction de l'espace disponible. */
+    align-items: center; /* Aligne verticalement les éléments enfants au centre de chaque cellule de la grille. */
+    gap: 2.5rem; /* Ajoute un espacement de 2.5rem entre les éléments enfants (en haut, en bas, à gauche et à droite). */
 }
 .service-box{
-    display: flex;
-    justify-content: center;
-    background-color: var(--main-color);
-    align-items: center;
-    height:600px;
-    border-radius: 3rem;
-    cursor: pointer;
-    border:5px solid transparent;
-    transition:0.4s ease-in-out;
+    display: flex; /* Définit l'élément comme un conteneur flex, permettant de disposer ses enfants sur une seule ligne (par défaut). */
+    justify-content: center; /* Aligne les éléments enfants horizontalement au centre du conteneur. */
+    background-color: var(--main-color); /* Définit la couleur de fond de l'élément avec la couleur définie dans la variable --main-color. */
+    align-items: center; /* Aligne les éléments enfants verticalement au centre du conteneur. */
+    height: 600px; /* Définit la hauteur de l'élément à 600px. */
+    border-radius: 3rem; /* Arrondit les coins de l'élément avec un rayon de 3rem, créant des bords lisses. */
+    cursor: pointer; /* Change le curseur pour une main lors du survol, suggérant que l'élément est cliquable. */
+    border: 5px solid transparent; /* Définit une bordure de 5px autour de l'élément, mais avec une couleur transparente (elle peut devenir visible lorsqu'un effet de survol est appliqué). */
+    transition: 0.4s ease-in-out; /* Applique une transition douce d'une durée de 0.4 seconde lors de changements de propriétés CSS, comme lors du survol ou du focus. */
 }
 .service-box:hover{
     background-color:var(--second-bg-color);
@@ -243,12 +265,12 @@ section{
     transform:scale(1.03)
 }
 .service-info{
-    display:flex;
-    flex-direction:column;
-    text-align:center;
-    justify-content: center;
-    align-items: center;
-    padding:5rem;
+    display: flex; /* Définit l'élément comme un conteneur flex, permettant de disposer ses enfants selon une direction définie. */
+    flex-direction: column; /* Organise les éléments enfants en **colonne**, les empilant les uns sur les autres (au lieu de la direction par défaut qui est horizontale). */
+    text-align: center; /* Centre le texte à l'intérieur de l'élément. Cela applique le centrage à tous les éléments texte (comme les titres ou les paragraphes) à l'intérieur de `.service-info`. */
+    justify-content: center; /* Aligne les éléments enfants **verticalement** au centre du conteneur. Cela garantit que les éléments sont distribués de manière uniforme et centrés sur l'axe vertical. */
+    align-items: center; /* Aligne les éléments enfants **horizontalement** au centre du conteneur. Cela garantit que les éléments sont centrés sur l'axe horizontal. */
+    padding: 5rem; /* Ajoute un espacement interne de **5rem** autour de tous les côtés du conteneur. Cela permet d'ajouter de l'espace entre le contenu à l'intérieur de `.service-info` et ses bords. */
 }
 .service-info i{
     font-size:8rem;
@@ -268,32 +290,32 @@ section{
     background-color:var(--second-bg-color) ;
 }
 .contact h2{
-    margin-bottom: 3rem;
-    color:var(--text-color);
+    margin-bottom: 3rem; /* Ajoute un espace de 3rem en dessous de l'élément <h2>, créant ainsi un espacement entre le titre et le contenu qui le suit. */
+    color: var(--text-color); /* Applique la couleur définie dans la variable CSS --text-color au texte de l'élément <h2>. Cela permet d'assurer une couleur cohérente et facile à ajuster globalement. */
 }
 .contact form{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap:3rem;
-    margin: 5rem 0;
-    text-align: center;
+    display: flex; /* Applique un modèle de mise en page flexbox, permettant de disposer les éléments enfants (les champs de formulaire) en ligne ou en colonne de manière flexible. */
+    align-items: center; /* Aligne les éléments enfants verticalement au centre de l'élément <form>. Cela garantit que les champs de formulaire seront centrés sur l'axe vertical. */
+    justify-content: center; /* Aligne les éléments enfants horizontalement au centre de l'élément <form>. Cela permet de centrer le contenu du formulaire. */
+    gap: 3rem; /* Ajoute un espace de 3rem entre les éléments enfants (les champs de formulaire) dans la disposition flexbox, permettant une séparation nette entre chaque champ. */
+    margin: 5rem 0; /* Ajoute une marge de 5rem en haut et en bas du formulaire, créant un espace autour du formulaire pour le séparer des autres éléments sur la page. */
+    text-align: center; /* Centre le texte à l'intérieur du formulaire, utile pour centrer les étiquettes et les autres textes à l'intérieur du formulaire. */
 }
 .contact form .input-box input,
 .contact form textarea{
-    width: 100%;
-    padding:2.5rem;
-    font-size:1.8rem;
-    color:var(--text-color);
-    background-color: var(--bg-color);
-    border-radius: 2rem;
-    border:2px solid var(--main-color);
-    margin:1.5rem;
-    resize: none;
+    width: 100%; /* Définit la largeur de l'élément (champ de saisie ou zone de texte) à 100% de la largeur de son parent, afin qu'il occupe tout l'espace disponible à l'intérieur du formulaire. */
+    padding: 2.5rem; /* Ajoute un espacement intérieur de 2.5rem autour du texte à l'intérieur du champ de saisie ou de la zone de texte, pour rendre le texte plus lisible. */
+    font-size: 1.8rem; /* Définit la taille de la police à 1.8rem, pour garantir une lisibilité optimale des textes saisis. */
+    color: var(--text-color); /* Applique la couleur du texte définie par la variable `--text-color`, permettant de personnaliser la couleur du texte. */
+    background-color: var(--bg-color); /* Applique la couleur de fond définie par la variable `--bg-color`, offrant une personnalisation du fond des champs. */
+    border-radius: 2rem; /* Applique un rayon de bordure de 2rem aux champs de saisie et zones de texte, les rendant visuellement plus arrondis. */
+    border: 2px solid var(--main-color); /* Applique une bordure solide de 2px avec la couleur définie par la variable `--main-color`, ce qui permet de personnaliser l'apparence de la bordure. */
+    margin: 1.5rem; /* Ajoute un espacement de 1.5rem autour de chaque champ de saisie ou zone de texte, permettant de les espacer des autres éléments du formulaire. */
+    resize: none; /* Désactive la possibilité de redimensionner la zone de texte, pour maintenir une taille uniforme. */
 }
 .footer{
-    background-color: black;
-    padding: 50px 0;
+    background-color: black; /* Définit la couleur de fond de l'élément footer en noir. Cela permet de créer une section distincte en bas de la page avec un fond sombre. */
+    padding: 50px 0; /* Ajoute un espacement intérieur de 50px en haut et en bas du footer, pour que le contenu à l'intérieur de la section ne soit pas trop collé aux bords. */
 }
 .footer .social-icons{
     text-align: center;
@@ -303,8 +325,8 @@ section{
     font-size:1.8rem;
 }
 .footer ul li{
-    display: inline-block;
-    margin-left: 20px;
+    display: inline-block; /* Définit chaque élément de liste (li) comme un élément en ligne mais avec les propriétés de bloc. Cela permet aux éléments de s'afficher horizontalement tout en conservant certaines propriétés de bloc (comme la possibilité d'ajouter des marges et des padding). */
+    margin-left: 20px; /* Ajoute un espace de 20px à gauche de chaque élément de la liste (li), afin de les espacer les uns des autres horizontalement. */
 }
 .footer ul li a{
     color: white;
@@ -324,106 +346,145 @@ section{
 /* Taille d'écran pour les tablettes (768px ou moins) */
 @media (max-width: 768px) {
     html {
-        font-size: 50%;
+        font-size: 50%; /* Diminue la taille de la police de base à 50% de la taille par défaut, ce qui réduit la taille générale du texte sur les petits écrans. */
     }
+
     .header {
-        padding: 3rem 5%;
+        padding: 3rem 5%; /* Réduit les espacements de la zone d'en-tête (header), en ajustant le padding à 3rem en haut et en bas, et à 5% à gauche et à droite pour optimiser l'espace sur les petits écrans. */
     }
+
     .home {
-        flex-direction: column;
-        text-align: center;
+        flex-direction: column; /* Change la direction du layout flex de "ligne" à "colonne", ce qui fait que les éléments de la section home s'affichent verticalement sur les petits écrans. */
+        text-align: center; /* Centre le texte dans la section home pour une meilleure présentation sur les petits écrans. */
     }
+
     .home-content {
-        align-items: center;
+        align-items: center; /* Centre les éléments à l'intérieur de .home-content sur l'axe transversal, ce qui rend la disposition plus agréable sur les petits écrans. */
     }
+
     .home-content h1 {
-        font-size: 5rem;
+        font-size: 5rem; /* Réduit la taille du titre principal (h1) à 5rem pour éviter qu'il soit trop grand sur des écrans de petite taille. */
     }
+
     .home-content h3 {
-        font-size: 3rem;
+        font-size: 3rem; /* Réduit la taille du sous-titre (h3) à 3rem pour maintenir une bonne hiérarchie visuelle sur les petits écrans. */
     }
+
     .home-img img {
-        width: 60vw;
+        width: 60vw; /* Modifie la largeur de l'image dans la section home à 60% de la largeur de la fenêtre pour qu'elle s'adapte mieux aux petits écrans. */
     }
+
     .navbar a {
-        font-size: 1.5rem;
-        margin-left: 2rem;
+        font-size: 1.5rem; /* Réduit la taille des liens dans la barre de navigation (navbar) à 1.5rem pour améliorer la lisibilité sur les petits écrans. */
+        margin-left: 2rem; /* Ajoute une marge de 2rem à gauche des liens de la navbar pour espacer un peu plus les éléments dans la barre de navigation. */
     }
+
     .about {
-        flex-direction: column;
+        flex-direction: column; /* Change la disposition des éléments de la section about en colonne (verticale) pour mieux s'adapter aux écrans plus petits. */
     }
+
     .about-img img {
-        width: 50vw;
+        width: 50vw; /* Réduit la largeur de l'image dans la section about à 50% de la largeur de la fenêtre pour une meilleure proportion sur les petits écrans. */
     }
 }
+
 
 /* Taille d'écran pour les mobiles (480px ou moins) */
 @media (max-width: 480px) {
     html {
-        font-size: 40%;
+        font-size: 40%; /* Réduit la taille de la police de base à 40%, ce qui diminue la taille du texte sur des écrans très petits. */
     }
+
     .header {
-        padding: 2rem 3%;
+        padding: 2rem 3%; /* Réduit l'espacement dans l'en-tête (header), ajustant le padding à 2rem en haut et en bas, et à 3% à gauche et à droite pour mieux s'adapter aux petits écrans. */
     }
+
     #menu-icon {
-        display: block;
+        display: block; /* Affiche l'icône du menu (généralement un hamburger menu) sur les écrans très petits, pour permettre l'ouverture du menu. */
     }
+
     .navbar {
-        display: none; /* Masquer le menu sur petit écran */
+        display: none; /* Cache le menu de navigation classique (navbar) sur les écrans de petite taille pour utiliser le menu déroulant via l'icône du menu. */
     }
+
     .home-content h1 {
-        font-size: 4rem;
+        font-size: 4rem; /* Réduit la taille du titre principal (h1) à 4rem pour que le texte soit plus petit et mieux adapté aux petits écrans. */
     }
+
     .home-content h3 {
-        font-size: 2.5rem;
+        font-size: 2.5rem; /* Réduit la taille du sous-titre (h3) à 2.5rem pour une meilleure visibilité sur les petits écrans. */
     }
+
     .home-img img {
-        width: 70vw;
+        width: 70vw; /* Réduit la largeur de l'image dans la section home à 70% de la largeur de la fenêtre pour qu'elle soit mieux proportionnée sur les petits écrans. */
     }
+
     .btn {
-        font-size: 2.5rem;
-        padding: 0.8rem 2rem;
+        font-size: 2.5rem; /* Réduit la taille de la police des boutons à 2.5rem pour qu'ils s'adaptent à l'espace sur les petits écrans. */
+        padding: 0.8rem 2rem; /* Réduit les espaces internes des boutons pour les rendre plus compacts et adaptés aux petits écrans. */
     }
+
     .about-img img {
-        width: 70vw;
+        width: 70vw; /* Réduit la largeur de l'image dans la section about à 70% de la largeur de la fenêtre pour mieux l'adapter aux petits écrans. */
     }
+
     .services-container {
-        grid-template-columns: 1fr; /* Une seule colonne */
+        grid-template-columns: 1fr; /* Modifie le layout de la section services pour afficher une seule colonne sur les petits écrans, au lieu de plusieurs colonnes. */
     }
+
     .service-box {
-        height: auto;
-        padding: 2rem;
+        height: auto; /* Permet à chaque boîte de service de s'ajuster automatiquement à son contenu en hauteur, plutôt que de maintenir une hauteur fixe. */
+        padding: 2rem; /* Ajoute des espacements internes à chaque boîte de service pour les rendre plus lisibles sur des écrans plus petits. */
     }
+
     .contact form {
-        flex-direction: column;
-        gap: 1.5rem;
+        flex-direction: column; /* Change l'orientation des éléments du formulaire de contact en colonne, au lieu de ligne, pour mieux les organiser sur un petit écran. */
+        gap: 1.5rem; /* Réduit l'espacement entre les éléments du formulaire à 1.5rem pour améliorer l'espacement vertical sur les petits écrans. */
     }
 }
+
 /*pour le cache container */
-.header .container{
-     position:relative;
-     display:inline-block;
+.header .container {
+    position: relative; /* Cette règle permet de positionner l'élément relativement à sa position initiale dans le flux du document.
+    Cela est souvent utilisé pour permettre de placer des éléments enfants en position absolue à l'intérieur de ce conteneur, en utilisant des propriétés comme top, right, bottom, et left. */
+    display: inline-block; /* Définit l'élément comme un bloc en ligne. Cela signifie que l'élément occupe l'espace nécessaire à son contenu mais peut aussi être placé à côté d'autres éléments en ligne, tout en gardant la possibilité de définir des dimensions (largeur et hauteur). */
 }
-.header .hidden-box {
-    position: absolute;
-    top: 100%; /* Position sous l'icône */
-    left: 0;
-    background: black;
-    border: 1px solid #ccc;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s ease;
-    min-width: 200px;
+.header .container .hidden-box {
+    position: absolute; /* L'élément est positionné de manière absolue par rapport à son conteneur parent qui a une position relative (comme défini dans .header .container). Cela permet de le placer précisément à l'endroit voulu. */
+    top: 100%; /* L'élément est placé juste en dessous de son conteneur parent, à 100% de la hauteur de ce parent, soit directement sous l'élément auquel il est attaché. */
+    right: 0; /* L'élément est aligné à gauche du conteneur parent. */
+    background: black; /* Définit l'arrière-plan de l'élément en noir. */
+    padding: 30px; /* Ajoute un espace intérieur de 20 pixels autour du contenu de l'élément. */
+    border-radius: 8px; /* Arrondit les coins de l'élément avec un rayon de 8 pixels. */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Applique une ombre portée légère à l'élément, à 2px de décalage vertical et 5px de flou, avec une couleur noire semi-transparente (20% d'opacité). */
+    opacity: 0; /* L'élément est invisible initialement (opacité à 0). */
+    visibility: hidden; /* L'élément est caché et ne prend pas de place dans le flux de la page (il est entièrement invisible). */
+    transition: all 0.3s ease; /* Applique une transition fluide de 0.3 seconde pour toutes les propriétés CSS, avec un effet de transition "ease" qui démarre lentement, accélère et ralentit à la fin. */
+    min-width: 200px; /* Définit une largeur minimale de l'élément à 200 pixels, ce qui garantit qu'il ne sera pas plus petit que cette largeur. */
 }
+.header .container .hidden-box a{
+        display: inline-flex; /* Affiche les liens comme des éléments flexibles en ligne, ce qui permet de mieux aligner leur contenu */
+        justify-content: center; /* Centre horizontalement le contenu à l'intérieur du lien */
+        align-items: center; /* Centre verticalement le contenu à l'intérieur du lien */
+        font-size: 3rem; /* Définit une taille de police de 3rem pour le contenu (icônes ou texte) */
+        padding: 2rem; /* Ajoute un espace intérieur de 1rem autour du contenu */
+        margin: 3rem 0.5rem; /* Ajoute une marge externe : 3rem en haut et en bas, 0.5rem à gauche et à droite */
+        color: white; /* Définit la couleur du texte ou de l'icône à --main-color */
+        gap: 2rem; /* Ajoute un espace de 2rem entre les éléments internes si plusieurs éléments sont présents */
+}
+
+.header .container .hidden-box a:hover{
+    border-bottom: 3px solid var(--main-color);
+    color: var(--main-color);
+}
+
 .header .container:hover .hidden-box {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(5px);
+    opacity: 1; /* Lorsque l'utilisateur survole l'élément avec la classe .container, l'élément avec la classe .hidden-box devient totalement visible en augmentant son opacité à 1 (opacité maximale). */
+    visibility: visible; /* L'élément devient visible dans le flux de la page, ce qui le rend interactif et prend de l'espace. */
+    transform: translateY(5px); /* L'élément est déplacé vers le bas de 5 pixels par rapport à sa position initiale, ce qui crée un léger effet de décalage lorsque l'utilisateur survole le conteneur. */
 }
-.header .container .hidden-box li{
+
+.header .container .hidden-box {
     border:1px solid orangered ;
     border-radius: 8px;
     font-size: 10px;
