@@ -468,7 +468,7 @@ ease-in-out : L'animation commence lentement, accélère au centre, puis ralenti
         align-items: center; /* Centre verticalement le contenu à l'intérieur du lien */
         font-size: 3rem; /* Définit une taille de police de 3rem pour le contenu (icônes ou texte) */
         padding: 2rem; /* Ajoute un espace intérieur de 1rem autour du contenu */
-        margin: 3rem 0.5rem; /* Ajoute une marge externe : 3rem en haut et en bas, 0.5rem à gauche et à droite */
+        margin: 1rem 0.5rem; /* Ajoute une marge externe : 3rem en haut et en bas, 0.5rem à gauche et à droite */
         color: white; /* Définit la couleur du texte ou de l'icône à --main-color */
         gap: 2rem; /* Ajoute un espace de 2rem entre les éléments internes si plusieurs éléments sont présents */
 }
